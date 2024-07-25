@@ -8,6 +8,8 @@ app.use(express.json());
 
 const port = process.env.PORT || 4000;
 
+//connect mongodb database
+require('./database/db');
 
 app.get("/", async (req,res)=>{
     res.send("Test server is running");
