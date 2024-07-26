@@ -1,4 +1,5 @@
 const express = require('express');
+const authRoutes = require('./routes/auth');
 const cors = require('cors');
 const app = express();
 require('dotenv').config();
@@ -10,6 +11,10 @@ const port = process.env.PORT || 4000;
 
 //connect mongodb database
 require('./database/db');
+
+//Routes
+app.use('/api/auth', authRoutes);
+
 
 
 app.get("/", async (req,res)=>{
